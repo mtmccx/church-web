@@ -238,7 +238,7 @@ nav.main-nav ul li {
 .card-grid .card h4 {
   margin-bottom: 12px;
   font-size: 1.2rem;
-  color: #222;
+  color: #ffffff;
 }
 
 .card-grid .card p {
@@ -1792,3 +1792,10 @@ h2 {
 .carousel img {
     animation: fadeIn 1s ease;
 }
+
+
+.footercolor h4 {
+  color: #FFFFFF;
+}
+
+
