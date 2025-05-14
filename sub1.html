@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Hong Kong Catholic Cathedral of the Immaculate Conception</title>
+  <link rel="stylesheet" href="main.css" />
+  <!-- Google Fonts for modern Chinese & English -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Main Content -->
+  <main>
+  <div class="container">
+    <header class="topbar">
+      <a class="logo" href="main.html">
+        <img src="images/header.jpeg" alt="Logo">
+      </a>
+      <div class="icons">
+        <a href="https://www.facebook.com/catholiccathedralhk/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/catholic.cathedral.hk/?hl=en" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </header>
+
+        <nav class="main-nav">
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="main.html">主頁</a ></li>
+          <li><a href="sub2.html">座堂活動</a></li>
+          <li><a href="#">座堂資訊</a></li>
+          <li><a href="sub1.html">成人慕道團</a></li>
+          <li><a href="#">關於我們</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="carousel-container">
+      <button class="carousel-btn prev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <div class="carousel" id="photo-carousel">
+        <img src="Images/IMG_0605.jpg" alt="photo 1"/>
+        <img src="Images/IMG_0606.jpg" alt="photo 2"/>
+        <img src="Images/IMG_0607.jpg" alt="photo 3"/>
+        <img src="Images/IMG_0608.jpg" alt="photo 4"/>
+        <img src="Images/IMG_0609.jpg" alt="photo 5"/>
+      </div>
+      
+      <button class="carousel-btn next" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <div class="carousel-indicators">
+        <div class="carousel-indicator active" data-index="0"></div>
+        <div class="carousel-indicator" data-index="1"></div>
+        <div class="carousel-indicator" data-index="2"></div>
+        <div class="carousel-indicator" data-index="3"></div>
+        <div class="carousel-indicator" data-index="4"></div>
+      </div>
+    </div>
+
+    <!-- Transition Section: Main Left Text, Right Image -->
+    <section class="transition-section">
+      <div class="transition-left">
+        <div class="transition-title">成年人領受入門聖事前的慕道培育過程</div>
+        <ul>
+          <li>接受大約一年或以上的培育：</li>
+          <li>† 有系統地學習天主教的信仰。</li>
+          <li>† 孕育出對主的信德和皈依。</li>
+          <li>† 參與教會團體的祈禱、生活和使命。</li>
+          <li>† 加入教會，成為天主的子女，為主作證。</li>
+        </ul>
+      </div>
+      <div class="transition-right">
+        <!-- Replace with your own image -->
+        <img src="Images/IMG_0610.jpg" alt="formation photo" />
+        <div class="img-caption">成人幕道團時間表</div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="process-title">入教過程</div>
+      <!-- Replace with your own image -->
+      <img class="process-img" src="Images/IMG_0611.jpg" alt="Process photo"/>
+    </section>
+  </main>
+
+  <!-- Footer -->
+<footer class="site-footer">
+      <div class="col">
+        <h4>關於我們</h4>
+        <ul>
+          <li>📍香港堅道十六號</li>
+          <li>📞 2522 – 8212</li>
+          <li>⌨️cathedral@catholic.org.hk</li>
+          <li>營業時間：每天早上7時至下午7時</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>教區網頁</h4>
+        <ul>
+          <li>📺 教區網頁亦於</li>
+          <li>以下時間直播主日彌撒:</li>
+          <li>– 主日上午9時30分(英文)</li>
+          <li>– 主日上午11時30分(中文)</li>
+        </ul>
+      </div>
+      <div class="col social">
+        <div class="social-wrapper">
+          <a href="https://www.facebook.com/catholiccathedralhk/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/catholic.cathedral.hk/?hl=en" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Carousel Script for Auto Slide -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('photo-carousel');
+  const images = carousel.getElementsByTagName('img');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  
+  let currentIndex = 0;
+  const totalImages = images.length;
+  
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // 更新指示器
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+  }
+  
+  // 下一張
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
+  }
+  
+  // 上一張
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
+  }
+  
+  // 按鈕事件
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+  
+  // 指示器點擊事件
+  indicators.forEach(indicator => {
+    indicator.addEventListener('click', function() {
+      currentIndex = parseInt(this.getAttribute('data-index'));
+      updateCarousel();
+    });
+  });
+  
+  // 自動播放 (可選)
+  let autoPlay = setInterval(nextSlide, 5000);
+  
+  // 鼠標懸停時暫停自動播放
+  carouselContainer = document.querySelector('.carousel-container');
+  carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlay));
+  carouselContainer.addEventListener('mouseleave', () => {
+    autoPlay = setInterval(nextSlide, 5000);
+  });
+  
+  // 觸摸滑動支持 (移動設備)
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  carouselContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  
+  carouselContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+  
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+      nextSlide(); // 向左滑動
+    }
+    if (touchEndX > touchStartX + 50) {
+      prevSlide(); // 向右滑動
+    }
+  }
+});
+  </script>
+</body>
+</html>
