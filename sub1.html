@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Hong Kong Catholic Cathedral of the Immaculate Conception</title>
   <link rel="stylesheet" href="main.css" />
-  <!-- Google Fonts for modern Chinese & English -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Main Content -->
   <main>
   <div class="container">
     <header class="topbar">
@@ -70,7 +68,6 @@
       </div>
     </div>
 
-    <!-- Transition Section: Main Left Text, Right Image -->
     <section class="transition-section">
       <div class="transition-left">
         <div class="transition-title">成年人領受入門聖事前的慕道培育過程</div>
@@ -83,16 +80,14 @@
         </ul>
       </div>
       <div class="transition-right">
-        <!-- Replace with your own image -->
         <img src="images/IMG_0610.jpg" alt="formation photo" />
         <div class="img-caption">成人幕道團時間表</div>
       </div>
     </section>
 
-    <!-- Process Section -->
+ 
     <section class="process-section">
       <div class="process-title">入教過程</div>
-      <!-- Replace with your own image -->
       <img class="process-img" src="images/IMG_0611.jpg" alt="Process photo"/>
     </section>
   </main>
@@ -130,7 +125,6 @@
     </footer>
   </div>
 
-  <!-- Carousel Script for Auto Slide -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.getElementById('photo-carousel');
@@ -145,7 +139,6 @@
   function updateCarousel() {
     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
     
-    // 更新指示器
     indicators.forEach((indicator, index) => {
       if (index === currentIndex) {
         indicator.classList.add('active');
@@ -155,23 +148,19 @@
     });
   }
   
-  // 下一張
   function nextSlide() {
     currentIndex = (currentIndex + 1) % totalImages;
     updateCarousel();
   }
   
-  // 上一張
   function prevSlide() {
     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
     updateCarousel();
   }
   
-  // 按鈕事件
   nextBtn.addEventListener('click', nextSlide);
   prevBtn.addEventListener('click', prevSlide);
   
-  // 指示器點擊事件
   indicators.forEach(indicator => {
     indicator.addEventListener('click', function() {
       currentIndex = parseInt(this.getAttribute('data-index'));
@@ -179,17 +168,14 @@
     });
   });
   
-  // 自動播放 (可選)
   let autoPlay = setInterval(nextSlide, 5000);
   
-  // 鼠標懸停時暫停自動播放
   carouselContainer = document.querySelector('.carousel-container');
   carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlay));
   carouselContainer.addEventListener('mouseleave', () => {
     autoPlay = setInterval(nextSlide, 5000);
   });
   
-  // 觸摸滑動支持 (移動設備)
   let touchStartX = 0;
   let touchEndX = 0;
   
@@ -204,10 +190,10 @@
   
   function handleSwipe() {
     if (touchEndX < touchStartX - 50) {
-      nextSlide(); // 向左滑動
+      nextSlide(); 
     }
     if (touchEndX > touchStartX + 50) {
-      prevSlide(); // 向右滑動
+      prevSlide();
     }
   }
 });
