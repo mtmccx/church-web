@@ -1835,3 +1835,10 @@ h2 {
   text-align: center;
   display: inline-block;
 }
+
+.searchbar {
+  width: 20vh;
+  height: auto;
+  margin-left: 32vh;
+  overflow: hidden;
+}
