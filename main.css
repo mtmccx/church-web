@@ -1800,3 +1800,38 @@ h2 {
 }
 
 
+.card-grid .grid-container .grid-item img {
+  display: block; 
+  width: 100%;
+  height: 300px;    
+  object-fit: cover;
+  margin-bottom: 50px; 
+}
+.card-grid .grid-container .grid-item h2,
+.card-grid .grid-container .grid-item h3 {
+  margin-top: 0;
+}
+
+/* 反轉 feature-section 的排列順序 */
+.feature-section.reverse {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+/* 響應式：手機或窄螢幕下仍維持直排 */
+@media (max-width: 768px) {
+  .feature-section.reverse {
+    flex-direction: column;
+  }
+}
+
+
+/* 修正 View More 按鈕文字不見 */
+.features .feature a.btn {
+  background: var(--primary-color);  /* 如有需要可改你要的底色 */
+  color: #fff;                        /* 確保文字為白色 */
+  font-weight: 600;                   /* 可選：加粗字體 */
+  text-align: center;
+  display: inline-block;
+}
