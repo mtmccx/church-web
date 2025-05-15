@@ -1093,6 +1093,7 @@ footer a:hover {
 .mb-xl { margin-bottom: var(--space-xl); }
 .shadow { box-shadow: var(--shadow); }
 .rounded { border-radius: var(--radius-md); }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
